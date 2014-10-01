@@ -1,4 +1,7 @@
 js2xml
 ======
 
-Convert Javascript object to XML string
+A primitive library for converting Javascript objects to XML strings.
+
+Written by Vladimir Neverov <sanguini@gmail.com> in 2014.
+
