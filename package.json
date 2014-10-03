@@ -1,16 +1,19 @@
 {
-  "name": "js2xml",
+  "name": "jso2xml",
   "version": "0.0.1",
   "description": "Convert JS object to XML",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Vladimir Neverov <sanguini@gmail.com>",
+  "author": {
+    "name": "Vladimir Neverov",
+    "email": "sanguini@gmail.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vne/js2xml.git"
+    "url": "https://github.com/vne/jso2xml.git"
   },
   "keywords": [
     "javascript",
@@ -19,7 +22,13 @@
     "conversion"
   ],
   "bugs": {
-    "url": "https://github.com/vne/js2xml/issues"
+    "url": "https://github.com/vne/jso2xml/issues"
   },
-  "homepage": "https://github.com/vne/js2xml"
+  "homepage": "https://github.com/vne/jso2xml",
+  "readme": "js2xml\n======\n\nA primitive library for converting Javascript objects to XML strings.\n\nWritten by Vladimir Neverov <sanguini@gmail.com> in 2014.\n\n",
+  "readmeFilename": "README.md",
+  "gitHead": "b6183385780fee57e1fe78a767595497b2cc01c0",
+  "_id": "jso2xml@0.0.1",
+  "_shasum": "9504a73cd4c65bb3dc447e51fbee714c5b71a55e",
+  "_from": "jso2xml@"
 }
