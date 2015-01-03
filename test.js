@@ -14,8 +14,8 @@ var obj1 = {
 
 var obj2 = {
 		root: {
-			$: { version: 1 },
-			_: "a text string",
+			$: { version: 1, comment: 'a "text" comment', boolean: true },
+			_: 'a "text" string',
 			list: { y: [ { $: { v: 2 }, attr: 10}, 2, 3] }
 		}
 	}
@@ -25,5 +25,5 @@ console.log('Example 1\n', js2xml(obj1), "\n");
 xml2js.parseString(js2xml(obj1), { explicitArray: true }, function(err, res) {
 	console.log(JSON.stringify(res, null, 4));
 });
-// console.log('===============================')
-// console.log('Example 2\n', js2xml(obj2), "\n");
+console.log('===============================')
+console.log('Example 2\n', js2xml(obj2), "\n");

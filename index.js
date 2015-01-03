@@ -78,8 +78,10 @@ function processKey(k, data) {
 	if (data) {
 		if (data.constructor === String) {
 			return openTag(k) + cdata(data) + closeTag(k);
-		} else if (data.toString() === parseFloat(data).toString()) {
+		} else if (data.constructor === Number || (data.toString() === parseFloat(data).toString())) {
 			return openTag(k) + data + closeTag(k);
+		} else if (data.constructor === Boolean) {
+			return openTag(k) + data.toString() + closeTag(k);
 		}
 	}
 	if (!data || Object.keys(data).length === 1 && data.$) {
@@ -98,7 +100,7 @@ function openTag(name, attrs, selfClose) {
 	var tag = '<' + name;
 	if (attrs) {
 		for (var i in attrs) {
-			tag += ' ' + i + '="' + attrs[i] + '"';
+			tag += ' ' + i + '="' + screenQuotes(attrs[i], '"') + '"';
 		}
 	}
 	if (selfClose) { tag += ' /'; }
@@ -108,6 +110,13 @@ function openTag(name, attrs, selfClose) {
 
 function closeTag(name) {
 	return '</' + name + '>';
+}
+
+function screenQuotes(str, quote) {
+	if (!str || !quote) { return str; }
+	var regex = new RegExp(quote, "g"),
+		rep = '\\' + quote;
+	return str.toString().replace(regex, rep);
 }
 
 function cdata(text) {
