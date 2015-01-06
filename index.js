@@ -115,7 +115,7 @@ function closeTag(name) {
 function screenQuotes(str, quote) {
 	if (!str || !quote) { return str; }
 	var regex = new RegExp(quote, "g"),
-		rep = '\\' + quote;
+		rep = '&quot;';
 	return str.toString().replace(regex, rep);
 }
 
